@@ -2,15 +2,17 @@
 Purpose: documenting my frankenstein driveway gate opener project with homekit, security+ RF, and solar battery backup. 
 
 ## History
-Many years ago I bought a [US Automatic Sentry 300](https://docs.usautomatic.com/retail/manuals/openers/sentry_gate_opener_manual_english.pdf) gate opener that served me well for over 10 years with minimal effort, but recently parts were harder to come by and I needed to replace both the operating arm and control board because of compoment failures.
+Many years ago I bought a [US Automatic Sentry 300](usa-sentry_install.pdf) gate opener that served me well for over 10 years with minimal effort, but recently parts were harder to come by and I needed to replace both the operating arm and control board because of compoment failures.
 
 This meant that I had a large weatherproof box, a solar panel, and solar battery charger that were useful.
 
 
 ## Control Board and Arm
-Locally I was able to buy a [GTO Mighty Mule 660](https://www.mightymule.com/wp-content/uploads/MM600-Manual-07-06-2010.pdf)
+Locally I was able to buy a [GTO Mighty Mule opener](https://www.mightymule.com/wp-content/uploads/MM600-Manual-07-06-2010.pdf)
 
 the control board is smaller, and when I removed it from the box I mounted it to one of the standoff posts and braced it on the solar charge controller.
+
+![alt text](mm560-control-board.jpg "control board image")
 
 I had to modify the existing wiring harness to easily attach the board to the existing battery. This made things pretty ugly since I used a bunch of crimp splices. but it gave me a fuse to prevent future issues with power draw frying the board the way it did on the old controller.
 
