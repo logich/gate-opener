@@ -1,7 +1,7 @@
 # gate-opener
 Purpose: documenting my frankenstein driveway gate opener project with homekit, security+ RF, and solar battery backup. 
 
-Many years ago I bought a US Automatic Sentry 300 gate opener that served me well for over 10 years with minimal effort, but recently parts were harder to come by and I needed to replace both the operating arm and control board because of compoment failures.
+Many years ago I bought a [US Automatic Sentry 300](https://docs.usautomatic.com/retail/manuals/openers/sentry_gate_opener_manual_english.pdf) gate opener that served me well for over 10 years with minimal effort, but recently parts were harder to come by and I needed to replace both the operating arm and control board because of compoment failures.
 
 This meant that I had a large weatherproof box, a solar panel, and solar battery charger that were useful.
 
