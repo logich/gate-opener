@@ -112,3 +112,42 @@ module rounded_rect(w, h, depth, r) {
                     cylinder(h = depth, r = r, $fn = 32);
     }
 }
+
+// ============================================================
+// Mounting Hole Cutout — panel cutout for a toggle switch with
+// a cylindrical body, two parallel flats, and an anti-rotation
+// notch on the right side.
+//
+// Datasheet geometry:
+//   Circle diameter  : 12.53 +0.0/-0.2 mm  → r = 6.265 mm
+//   Width across flats: 11.0 ± 0.1 mm      → flats at x = ±5.5 mm
+//   Notch offset     : 1.5 ± 0.1 mm from centerline (y = +1.5 mm)
+//
+// Usage: use mounting_hole_cutout() inside a difference() to cut
+// through a panel.  The bottom face sits at Z=0; top at Z=depth.
+// ============================================================
+module mounting_hole_cutout(depth = 3) {
+    r      = 12.53 / 2;  // 6.265 mm — circle radius
+    flat_x = 11.0  / 2;  // 5.5 mm  — half of width-across-flats
+
+    union() {
+        // Main body: full cylinder with the two vertical flats removed
+        difference() {
+            cylinder(h = depth, d = 12.53, $fn = 64);
+
+            // Left flat  — remove everything beyond x = -5.5 mm
+            translate([-(r + 1), -(r + 1), -0.5])
+                cube([r + 1 - flat_x, 2 * (r + 1), depth + 1]);
+
+            // Right flat — remove everything beyond x = +5.5 mm
+            translate([flat_x, -(r + 1), -0.5])
+                cube([r + 1 - flat_x, 2 * (r + 1), depth + 1]);
+        }
+
+        // Anti-rotation notch on the right side.
+        // Rectangle: 1.5 mm wide (x), 1.5 mm tall (y),
+        // centered at y = +1.5 mm above the horizontal centerline.
+        translate([flat_x, 1.5 - 0.75, 0])
+            cube([1.5, 1.5, depth]);
+    }
+}
